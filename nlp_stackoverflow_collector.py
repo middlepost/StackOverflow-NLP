@@ -83,7 +83,7 @@ def fetch_accepted_answer(question_id, api_key):
     return None
 
 # -------------------------------
-# Additional Statistics
+# Additional Statistics  rl_AX55VW3JCSUaPLBu2fV9qwJdG 
 # -------------------------------
 def calculate_statistics(df):
     unanswered = df[df['accepted_answer'] == '']
@@ -185,6 +185,7 @@ def main():
                 print(f"[INFO] Backoff received: waiting {data['backoff']} seconds...")
                 time.sleep(data['backoff'])
             if res.status_code != 200 or 'items' not in data:
+                print(res.status_code)
                 print("[WARNING] API limit reached or error.")
                 break
 
